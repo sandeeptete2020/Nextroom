@@ -49,7 +49,7 @@ export async function POST(request: Request) {
       input: {
         image: imageUrl,
         prompt:
-          "Beautiful Home Renovation, professional"
+          "Beautiful Home Renovation, professional",
        
       },
     }),

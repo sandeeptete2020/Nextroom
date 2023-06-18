@@ -34,7 +34,7 @@ export async function POST(request: Request) {
     }
   }
 
-  const { imageUrl } = await request.json();
+  const { imageUrl, theme, room } = await request.json();
 
   // POST request to Replicate to start the image restoration generation process
   let startResponse = await fetch("https://api.replicate.com/v1/predictions", {
@@ -45,13 +45,15 @@ export async function POST(request: Request) {
     },
     body: JSON.stringify({
       version:
-        "d55b9f2dcfb156089686b8f767776d5b61b007187a4e1e611881818098100fbb",
+        "854e8727697a057c525cdb45ab037f64ecca770a1769cc52287c2e56472a247b",
       input: {
         image: imageUrl,
         prompt:
-          "Beautiful Home Renovation, professional",
+          room === "Gaming Room"
+            ? "Beautiful home renovation, professional"
+            : `a ${theme.toLowerCase()} ${room.toLowerCase()}`,
         a_prompt:
-          "best quality, extremely detailed, photo from Pinterest, interior, cinematic photo, ultra-detailed, ultra-realistic, award-winning",
+          "Beautiful home renovation, professional",
         n_prompt:
           "longbody, lowres, bad anatomy, bad hands, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality",
       },

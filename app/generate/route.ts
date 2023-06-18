@@ -50,7 +50,10 @@ export async function POST(request: Request) {
         image: imageUrl,
         prompt:
           "Beautiful Home Renovation, professional",
-       
+        a_prompt:
+          "best quality, extremely detailed, photo from Pinterest, interior, cinematic photo, ultra-detailed, ultra-realistic, award-winning",
+        n_prompt:
+          "longbody, lowres, bad anatomy, bad hands, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality",
       },
     }),
   });

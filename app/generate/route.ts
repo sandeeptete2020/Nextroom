@@ -45,7 +45,7 @@ export async function POST(request: Request) {
     },
     body: JSON.stringify({
       version:
-        "958e647546803bf59c43affefdcb1f3273e6eebd5d98e72dc35d91099937384f",
+        "d55b9f2dcfb156089686b8f767776d5b61b007187a4e1e611881818098100fbb",
       input: {
         image: imageUrl,
         prompt:
